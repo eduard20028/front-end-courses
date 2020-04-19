@@ -14,7 +14,7 @@ ul, a{
 }
 button{
     padding: 15px 25px;
-    color: #545454;
+    color: #777777;
     font-weight: bold;
     border-radius: 28px;
     background: #FFF;
@@ -23,47 +23,44 @@ button{
     border: none; 
     outline: none;
 }
-.header .navbar__hamburger{
+.navbar .navbar__hamburger{
     visibility: hidden;
 }
-.header .navbar{
+.navbar{
     display:Flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 25px 0;
 }
-.header .navbar__dropdown{
-    display:none;
-}
-.header .navbar__list{
+.navbar .navbar__list{
     margin-right: 240px;
 }
-.header .navbar__list_item{
+.navbar .navbar__list-item{
     display:inline;
     margin: 0 23px;
     font-size:14px;
 }
-.header .navbar__list_item a{
-    color:#545454;
+.navbar .navbar__list-item a{
+    color:#777777;
     transition: 0.3s;
 }
-.header .navbar__list_item a:hover{
-    color:#C2BC66;
+.navbar .navbar__list-item a:hover{
+    color:#BFBA55;
 }
-.header .navbar__brand{
+.navbar .navbar__brand{
     margin-left: 230px;
-    color: #545454;
+    color: #2C2C2C;
     text-transform: uppercase;
     font-weight: bold;
 }
-.header .homepage{
+.homepage{
     position: relative;
     background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(../img/home-bg.jpg) no-repeat center top;
     background-size: cover;
     height: 92vh;
 }
-.header .homepage__wrap{
+.homepage .homepage__wrap{
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -73,22 +70,22 @@ button{
     height: 100%;
     text-align:center;
 }
-.header .homepage__heading-1{
+.homepage .homepage__title{
     color: #FFF;
     font-size:60px;
 }
-.header .homepage__heading-2{
+.homepage .homepage__subtitle{
     margin-top: 35px;
-    color: #C2BC66;
+    color: #BFBA55;
 }
-.header .homepage__learn-more{
+.homepage .homepage__btn-more{
     margin-top: 50px;
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: 0.3s;
     font-family: 'PT Serif', serif;
 }
-.header .homepage__learn-more:hover{
+.homepage .homepage__btn-more:hover{
     background: none;
     color:#FFF;
 }
@@ -99,71 +96,69 @@ button{
     max-width: 950px;
     margin: 0 auto;
 }
-.section__hero{
+.article{
     margin-top: 150px;
 }
-.section__hero:nth-child(1){
+.article:nth-child(1){
     margin-top:0;
 }
-.section__header_img{
+.article .article__header-img{
     width:100%;
     max-width: 950px;
 }
-.section__body_info{
+.article .article__body-info{
     display:flex;
     flex-direction: row;
     align-items: center;
+    margin-top:20px;
+    color:#777777;
+    font-family: 'PT Serif', serif;
 }
-.section__body_wrap-info{
+.article .article__body-wrap-info{
     margin-bottom:8px;
 }
-.section__body_img{
+.article .article__body-img{
     width: 43px;
     height: 43px;
     border-radius: 50%;
 }
-.section__body_title{
+.article .article__body-title{
     margin-top:45px;
 }
-.section__body_info{
-    margin-top:20px;
-    color:#414141;
-    font-family: 'PT Serif', serif;
-}
-.section__body .info__item-name{
+.article .article__body .info__item-name{
     margin-left: 8px;
 }
-.section__body .info__item-date{
+.article .article__body .info__item-date{
     margin-left: 20px;
 }
-.section__body .info__item-cmnt{
+.article .article__body .info__item-comment{
     margin-left: 15px;
 }
-.section__body .info__item-cmnt i{
+.article .article__body .info__item-comment i{
     font-size: 13.5px;
 }
-.section__body_content{
+.article .article__body-content{
     margin-top:25px;
 }
-.section__body_content-item{
+.article .article__body-content-item{
     line-height: 25px;
 }
-.section__body_lm-item{
+.article .article__body-btn-more{
     margin-top:40px;
     font-weight: bold;
     border: solid 1px #CDCDCD;
 }
-.section__body_lm-item:hover{
+.article .article__body-btn-more:hover{
     background: #CDCDCD;
     color: #FFF;
 }
-.section__body .section__body_content-item, .section__body_lm-item{
-    color: #787878;
+.article .article__body-content-item, .article .article__body-btn-more{
+    color: #777777;
 }
 .footer{
     padding: 100px 0 87px 0;
     background: #000;
-    color:#5C5C5C;
+    color:#777777;
 }
 .footer__container{
     display:flex;
@@ -175,7 +170,7 @@ button{
 .footer__copyright{
     width: 440px;
 }
-.footer__copyright_item{
+.footer__copyright-item{
     margin-top: 22px;
     line-height: 30px;
     font-family: 'PT Serif', serif;
@@ -183,31 +178,32 @@ button{
 .footer__contacts{
     width: 330px;
 }
-.footer__contacts_adress{
+.footer__contacts-adress{
     display:inline-flex;
-    margin-top:22px;
     flex-direction: column;
+
+    margin-top:22px;
     font-family: 'PT Serif', serif;
     font-style: normal;
 }
-.footer__contacts_adress span, a{
+.footer__contacts-adress span, a{
     line-height: 30px;
 }
-.footer__contacts_email{
-    color:#5C5C5C;
+.footer__contacts-email{
+    color:#777777;
 }
-.footer__contacts_title, .footer__copyright_title{
+.footer__contacts-title, .footer__copyright-title{
     color:#FFF;
 }
 
 @media screen and (max-width: 1050px) { 
-    .header .navbar{
+    .navbar{
         position:relative;
     }
-    .header .navbar__hamburger{
+    .navbar .navbar__hamburger{
         visibility: visible;
     }
-    .header .navbar__list{
+    .navbar .navbar__list{
         position: absolute;
         user-select: none; 
         width: 100%;
@@ -216,7 +212,7 @@ button{
         transition: all 0.4s;
         z-index: 100;
     }
-    .header .navbar__list_item{
+    .navbar .navbar__list-item{
         display: block;
         width: 100%;
         margin: -1px 0;
@@ -225,19 +221,19 @@ button{
         box-sizing: border-box;
         background: #FFF;
     }
-    .header .navbar__list_item:hover{
-        background: #787878;
+    .navbar .navbar__list-item:hover{
+        background: #777777;
     }
-    .header .navbar__list_item:hover a{
+    .navbar .navbar__list-item:hover a{
         color: #FFF;
     }
-    .header .navbar input[type=checkbox]{
+    .navbar input[type=checkbox]{
         display: none;
     }
-    .header .navbar input[type=checkbox]:checked ~ ul{
+    .navbar input[type=checkbox]:checked ~ ul{
         left: 0;
     }
-    .header label {
+    .navbar label {
         position: relative;
         padding: 7px 10px;
         border: solid 1px #000;
@@ -245,23 +241,23 @@ button{
         margin-right: 40px;
         transition: all 0.3s;
     }
-    .header .navbar label::after {
+    .navbar label::after {
         content: '\2716';
         position: absolute;
-        color: #C2BC66;
+        color: #BFBA55;
         font-size: 0px;
         top: 5px;
         right: 10px;
     }
-    .header .navbar input[type=checkbox]:checked ~  label{
+    .navbar input[type=checkbox]:checked ~  label{
         color: #FFF;
-        border-color: #C2BC66;
+        border-color: #BFBA55;
         transform: rotate(90deg);
     }
-    .header .navbar input[type=checkbox]:checked ~  label::after{
+    .navbar input[type=checkbox]:checked ~  label::after{
         font-size: 17px;
     }
-    .header .navbar__brand{
+    .navbar .navbar__brand{
         margin-left: 30px;
     }
     .section, .footer{
