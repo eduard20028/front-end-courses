@@ -39,16 +39,16 @@ button{
 .header .navbar__list{
     margin-right: 240px;
 }
-.header .navbar-list__item{
+.header .navbar__list_item{
     display:inline;
     margin: 0 23px;
     font-size:14px;
 }
-.header .navbar-list__item a{
+.header .navbar__list_item a{
     color:#545454;
     transition: 0.3s;
 }
-.header .navbar-list__item a:hover{
+.header .navbar__list_item a:hover{
     color:#C2BC66;
 }
 .header .navbar__brand{
@@ -105,59 +105,59 @@ button{
 .section__hero:nth-child(1){
     margin-top:0;
 }
-.section-header__img{
+.section__header_img{
     width:100%;
     max-width: 950px;
 }
-.section-body__info{
+.section__body_info{
     display:flex;
     flex-direction: row;
     align-items: center;
 }
-.section-body__wrap-info{
+.section__body_wrap-info{
     margin-bottom:8px;
 }
-.section-body__img{
+.section__body_img{
     width: 43px;
     height: 43px;
     border-radius: 50%;
 }
-.section-body__title{
+.section__body_title{
     margin-top:45px;
 }
-.section-body__info{
+.section__body_info{
     margin-top:20px;
     color:#414141;
     font-family: 'PT Serif', serif;
 }
-.section__body .info-item__name{
+.section__body .info__item-name{
     margin-left: 8px;
 }
-.section__body .info-item__date{
+.section__body .info__item-date{
     margin-left: 20px;
 }
-.section__body .info-item__cmnt{
+.section__body .info__item-cmnt{
     margin-left: 15px;
 }
-.section__body .info-item__cmnt i{
+.section__body .info__item-cmnt i{
     font-size: 13.5px;
 }
-.section-body__content{
+.section__body_content{
     margin-top:25px;
 }
-.section-body-content__item{
+.section__body_content-item{
     line-height: 25px;
 }
-.section-body-lm__item{
+.section__body_lm-item{
     margin-top:40px;
     font-weight: bold;
     border: solid 1px #CDCDCD;
 }
-.section-body-lm__item:hover{
+.section__body_lm-item:hover{
     background: #CDCDCD;
     color: #FFF;
 }
-.section__body .section-body-content__item, .section-body-lm__item{
+.section__body .section__body_content-item, .section__body_lm-item{
     color: #787878;
 }
 .footer{
@@ -175,7 +175,7 @@ button{
 .footer__copyright{
     width: 440px;
 }
-.footer-copyright__item{
+.footer__copyright_item{
     margin-top: 22px;
     line-height: 30px;
     font-family: 'PT Serif', serif;
@@ -183,20 +183,20 @@ button{
 .footer__contacts{
     width: 330px;
 }
-.footer-contacts__adress{
+.footer__contacts_adress{
     display:inline-flex;
     margin-top:22px;
     flex-direction: column;
     font-family: 'PT Serif', serif;
     font-style: normal;
 }
-.footer-contacts__adress span, a{
+.footer__contacts_adress span, a{
     line-height: 30px;
 }
-.footer-contacts__email{
+.footer__contacts_email{
     color:#5C5C5C;
 }
-.footer-contacts__title, .footer-copyright__title{
+.footer__contacts_title, .footer__copyright_title{
     color:#FFF;
 }
 
@@ -216,7 +216,7 @@ button{
         transition: all 0.4s;
         z-index: 100;
     }
-    .header .navbar-list__item{
+    .header .navbar__list_item{
         display: block;
         width: 100%;
         margin: -1px 0;
@@ -225,10 +225,10 @@ button{
         box-sizing: border-box;
         background: #FFF;
     }
-    .header .navbar-list__item:hover{
+    .header .navbar__list_item:hover{
         background: #787878;
     }
-    .header .navbar-list__item:hover a{
+    .header .navbar__list_item:hover a{
         color: #FFF;
     }
     .header .navbar input[type=checkbox]{
