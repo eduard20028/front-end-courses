@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body{
+    width:100%;
+    height: 100%;
+    color: $primary-txt-color;
+}
+button{
+    cursor: pointer;
+    border: none; 
+    outline: none;
+}
+
+$highlights: ("landing-": $primary-txt-color, "footer_": $links-txt-color);
+  
+@each $name, $color in $highlights {
+    .landing-logo p{
+      color: $color;
+    }
+}
+
+@mixin btn-link-theme($width, $height, $background){
+    width: $width;
+    height: $height;
+    background: $background;
+}
+@mixin font-format($family, $weight, $size, $color: null){
+    font: {
+        family: $family, sans-serif;
+        weight: $weight;
+        size: $size;
+    }
+    color: $color;
+}
+@mixin flex($direction: null, $justify:null, $content:null, $items:null){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-content: $content;
+    align-items: $items;
+}
+
+.landing-logo{
+    @include flex($direction: row);
+    img{
+        width: 60px;
+        height: 60px;
+    }
+    p{ 
+        @include font-format($theme-font, bold, 30px);
+        @include flex($direction: column, $content: center);
+        width: 85px;
+        margin-left: 25px;
+        text-align: center;
+        span{
+            line-height: 5px;
+            letter-spacing: -1px;
+            font-size: 15px;
+        }
+    }
+}
+.header{
+    position: relative;
+    height: 900px;
+    background:url($bg-image) no-repeat center center;
+    background-size: cover;
+    border-radius: 0 0 50%;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: $secondary-bg-color;
+            z-index: -1;
+        }
+        &-wrap{
+            margin: 0 auto;
+            padding:25px;
+            max-width: 1540px;
+            & div:last-child{
+                margin-top: 80px;
+            }
+        }
+        &_heading{
+            @include font-format('Source Sans Pro', bold, 86px);
+            position: relative;
+            max-width:600px;
+            margin-top: 105px;
+            z-index: 100;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 360px;
+                height: 60px;
+                bottom: 13px;
+                background-color: $header-hgl-color;
+                z-index: -1;
+            }
+        }
+        &_text{
+            @include font-format('Source Sans Pro', normal, 24px);
+            margin-top: 80px;
+            max-width: 820px;
+        }
+        .login{
+            @include font-format('Soruce Sans Pro', normal, 20px, #FFF);
+            margin-left: 190px;
+        }
+}
+.header_button{
+    @include btn-link-theme(180px, 60px, $button-bg-color);
+    @include font-format('Source Sans Pro', bold, 20px, #FFF);
+    transition: 0.3s;
+    &:hover{
+        border-radius: 30px;
+    }
+}
+.section_banner_button{
+    @extend .header_button;
+}
+.section{
+    position: relative;
+    padding: 40px 0 260px;
+    text-align:center;
+    background: $secondary-bg-color;
+    &_text{
+        @include font-format('Hind', bold, 48px);
+        position: relative;
+        margin-bottom: 25px;
+        z-index: 100;
+        &::before{
+            content: '';
+            position: absolute;
+            width: 220px;
+            height: 60px;
+            margin-left: 267px;
+            bottom: 20px;
+            background: $header-hgl-color;
+            z-index: -1;
+        }
+    }
+    &_card{
+        @include flex($direction: row, $items: center);
+        margin-top:30px;
+        padding: 28px 20px;
+        background: $primary-bg-color;
+        box-sizing:border-box;
+        border-radius: 10px;
+    }
+    &_card_wrap{
+        max-width: 1130px;
+        margin: 0 auto;
+    }
+    &_card_img{
+        width: 380px;
+        height: 300px;
+        border-radius: 10px;
+    }
+    &_card_heading{
+        @include font-format('Hind', bold, 36px, #FFF);
+    }
+    &_card_text{
+        @include font-format($theme-font, normal, 20px, #FFF);
+        margin: 30px 0;
+        text-align: justify;
+        line-height: 30px;
+        opacity: 0.7;
+    }
+    &_link{
+        @include font-format('Hind', normal, 16px, #FFF);
+    }
+    &_card_right_container{
+        max-width: 510px;
+        margin: 0 100px;
+    }
+    &_banner{
+        @include flex($direction: row, $justify: space-between, $items: center);
+        position: absolute;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 130px 60px;
+        left: 0;
+        right: 0;
+        bottom: -115px;
+        box-sizing: border-box;
+        border-radius: 10px;
+        background: linear-gradient(30deg, $grad-one, $grad-two);
+        z-index: 100;
+        &_text_wrap{
+            text-align: left;
+        }
+        &_heading{
+            @include font-format('Hind', bold, 40px);
+            position: relative;
+            z-index: 100;
+            &::before{
+                content: '';
+                position: absolute;
+                width: 80px;
+                height: 60px;
+                margin-left: 168px;
+                bottom: 15px;
+                background: $header-hgl-color;
+                z-index: -1;
+            }
+        }
+        &_text{
+            @include font-format($theme-font, normal, 22px, #FFF);
+            margin-top: 30px;
+            opacity: 0.7;
+        }
+    }
+}
+.footer{
+    @include flex($justify: space-between, $items: flex-end);
+    height: 300px;
+    padding: 0 190px 80px;
+    background: $primary-bg-color;
+    &-wrap{
+        @include flex($direction: row, $justify: space-between, $items: center);
+        width: 100%;
+        bottom: 0;
+    }
+    &_text{
+        max-width: 370px;
+        opacity: 0.7;
+    }
+    &_text, &-cr{
+        @include font-format($theme-font, normal, 16px, #FFF);
+        opacity: 0.7;
+    }
+    &_logo{
+        p{
+            opacity: 0.7;
+            span{
+                font-size: 16px;
+            }
+        }
+    }
+}
+
