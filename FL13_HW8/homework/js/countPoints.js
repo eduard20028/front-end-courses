@@ -4,7 +4,7 @@ let countPoints = (scoreArr) => {
     let points = 0;
     scoreArr.map(x => x.split(':')).forEach((arr) => {
         let x = arr[0], y = arr[1];
-        if(x <= 4&&y <= 4&&y >= 0&&x >= 0){
+        if(x <= 4 && y <= 4 && y >= 0 && x >= 0){
             if(x === y){
                 points += 1;
             } else if(isBigger(x, y)){
