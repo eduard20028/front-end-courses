@@ -57,9 +57,16 @@ let flipOver = (str) => {
 let makeListFromRange = (rangeArr) => {
     let res = [];
     let k = rangeArr[0];
-    while(k <= rangeArr[1]){
-        res.push(k);
-        k++;
+    if(k < rangeArr[1]){
+        while(k <= rangeArr[1]){
+            res.push(k);
+            k++;
+        }
+    } else {
+        while(k >= rangeArr[1]){
+            res.push(k);
+            k--;
+        }
     }
     return res;
 }
@@ -92,25 +99,9 @@ let getPastDay = (date, dayAgo) => {
 }
 
 let formatDate = (date) => {
-    const limNum = 10;
-    let year = date.getFullYear(),
-        month = date.getMonth() + 1,
-        day = date.getDate(),
-        hours = date.getHours(),
-        minutes = date.getMinutes();
-
-    if(month < limNum){ 
-        month = '0' + month; 
+    let options = {
+        hour: '2-digit', 
+        minute: '2-digit'
     }
-    if(day < limNum){ 
-        day = '0' + day;
-    }
-    if(hours < limNum){ 
-        hours = '0' + hours; 
-    }
-    if(minutes < limNum){ 
-        minutes = '0' + minutes;
-    }
-
-    return `${year}/${month}/${day} ${hours}:${minutes}`
+    return date.toLocaleDateString('en-ZA') + ' ' + date.toLocaleTimeString('en-ZA', options);
 }
