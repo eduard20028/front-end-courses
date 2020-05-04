@@ -1,4 +1,6 @@
-import isBigger from './isBigger.js';
+let isBigger = (a, b) => {
+    return a > b;
+}
 
 let countPoints = (scoreArr) => {
     let points = 0;
