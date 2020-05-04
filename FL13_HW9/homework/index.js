@@ -11,9 +11,6 @@ let convert = (...arr) => {
 
 let executeforEach = (arr, callback) => {
     for(let i = 0; i < arr.length; i++){
-        if(!isNaN(parseInt(arr[i]))){
-            arr[i] = parseInt(arr[i]);
-        }
         callback(arr[i]);
     }
 }
@@ -21,6 +18,9 @@ let executeforEach = (arr, callback) => {
 let mapArray = (arr, callback) => {
     let res = [];
     executeforEach(arr, (el) => {
+        if(!isNaN(parseInt(el))){
+            el = parseInt(el);
+        }
         res.push(callback(el));
     });
     return res;
@@ -94,7 +94,6 @@ let getPastDay = (date, dayAgo) => {
           ms = 1000;
     let dayMs = dayAgo * h * m * s * ms,
         dateMs = date.getTime();
-
     return new Date(dateMs - dayMs).getDate();
 }
 
