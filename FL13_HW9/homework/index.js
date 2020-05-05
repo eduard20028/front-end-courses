@@ -76,8 +76,8 @@ let getArrayOfKeys = (fruitArr, key) => {
 }
 
 let substitute = (numArr) => {
-    let min = 10, 
-        max = 20;
+    const min = 10, 
+          max = 20;
     return mapArray(numArr, (el) => el < max && el > min ? '*' : el)
 }
 
