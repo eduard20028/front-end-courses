@@ -56,17 +56,11 @@ let flipOver = (str) => {
 
 let makeListFromRange = (rangeArr) => {
     let res = [];
-    let k = rangeArr[0];
-    if(k < rangeArr[1]){
-        while(k <= rangeArr[1]){
-            res.push(k);
-            k++;
-        }
-    } else {
-        while(k >= rangeArr[1]){
-            res.push(k);
-            k--;
-        }
+    let k = rangeArr[0] > rangeArr[1] ? rangeArr[1] : rangeArr[0],
+        i = rangeArr[0] > rangeArr[1] ? rangeArr[0] : rangeArr[1];
+    while(k <= i){
+        res.push(k);
+        k++;
     }
     return res;
 }
