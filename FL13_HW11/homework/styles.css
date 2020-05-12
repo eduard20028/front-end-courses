@@ -1,0 +1,61 @@
+ul{
+    position: relative;
+    list-style-type: none;
+}
+ul li i, ul li input{
+    vertical-align: middle;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+}
+.root-folder{
+    max-width:400px;
+}
+.icon-fold{
+    color: #EDBC0B;
+}
+.icon-file{
+    color: #B0B0B0;
+}
+.empty-folder{
+    padding-left: 0;
+    font-style: italic;
+}
+.folder-info{
+    position: relative;
+}
+.folder-info::before{
+    content: '';
+    display: none;
+    position: absolute;
+    width: 200px;
+    height: 24px;
+    top: -1.5px;
+    background: #E3E3E3;
+    z-index: -1;
+}
+.folder-info:hover::before{
+    display: block;
+}
+.folder-name{
+    background: none;
+    border: none;
+}
+.context-menu{
+    position: absolute;
+    display: none;
+    padding: 10px;
+    box-shadow: 2px 2px 5px 2px #B0B0B0;
+    background: #FFF;
+    z-index: 100;
+}
+.context-menu:not(.disable) li:hover{
+    background: #E3E3E3;
+    cursor: pointer;
+}
+.active{
+    display:block;
+}
+.disable{
+    color: #B0B0B0;
+}
