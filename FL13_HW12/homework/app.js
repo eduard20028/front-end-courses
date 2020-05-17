@@ -231,8 +231,8 @@ class AddTab extends HTMLElement{
                         img: currImg,
                         plot: currPlot
                     })
+                    root.innerHTML = `<div class="container"><book-list></book-list><info-section/></div>`;
                 }
-                root.innerHTML = `<div class="container"><book-list></book-list><info-section/></div>`;
             } 
         })
 
