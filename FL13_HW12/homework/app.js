@@ -223,21 +223,16 @@ class AddTab extends HTMLElement{
                     id = Math.floor(Math.random() * 200) + 100,
                     timeoutMs = 3000;
                 if(currTitle.length&&currImg.length&&currAuthor.length&&currPlot.length){
-                    root.innerHTML = `<div class="container"><book-list></book-list><info-section/></div>`;
-                    changeHash('preview', id);
-                    setTimeout(() => alert('Book successfully updated'), timeoutMs);
-                } else {
-                localStorageUtil.putBook({
-                    id: `${id}`,
-                    author: currAuthor,
-                    title: currTitle,
-                    img: currImg,
-                    plot: currPlot
-                })
-                
-                root.innerHTML = `<div class="container"><book-list></book-list><info-section/></div>`;
-                setTimeout(() => alert('Book successfully added'), timeoutMs);
+                    setTimeout(() => alert('Book successfully added'), timeoutMs);
+                    localStorageUtil.putBook({
+                        id: `${id}`,
+                        author: currAuthor,
+                        title: currTitle,
+                        img: currImg,
+                        plot: currPlot
+                    })
                 }
+                root.innerHTML = `<div class="container"><book-list></book-list><info-section/></div>`;
             } 
         })
 
