@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: 'Arial', sant-serif;
+}
+li{
+    list-style: none;
+}
+html, body, #root, .container{
+    height: 100%;
+}
+body{
+    background: #E9ECEF;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.books-container, .btn-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.books-item{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 300px;
+    margin: 10px;
+    padding: 15px;
+    text-align:center;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: #FFF;
+}
+.books-item::before{
+    content: 'Show preview';
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    color: #FFFF;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    font: 20px bold;
+    transition: 0.3s;
+    background: #202124;
+}
+.books-item:hover::before{
+    opacity: 0.7;
+}
+.books-info{
+    margin: 7px 0;
+}
+.books-item__img{
+    width: 100%;
+    height: 270px;
+}
+.info-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    width: 500px;
+    height: 100%;
+    color: #292929;
+    background: #FFF;
+}
+.card-container{
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: left;
+}
+.card-container *{
+    margin: 10px 0;
+}
+.card-item__img{
+    width: 100%;
+}
+.btn{
+    margin: 10px 0;
+    padding: 10px 15px;
+    border: solid 1px #FFF;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.btn:hover{
+    border-color: black;
+}
+.btn-edit{
+    background: #46B004;
+}
+.btn-add{
+    background: #46B004;
+}
+.btn-save{
+    background: #46B004;
+}
+.btn-canc{
+    background: #CE0449;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form-container{
+    padding: 30px;
+}
+.form-item{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+.form-item__input, .form-item__text{
+    width: 300px;
+}
+.form-item__text{
+    height: 200px;
+    resize: vertical;
+}
