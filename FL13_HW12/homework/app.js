@@ -216,10 +216,10 @@ class AddTab extends HTMLElement{
         this.firstChild.addEventListener('click', (e) => {
             const target = e.target;
             if (target.classList.contains('btn-save')) {
-                let currTitle = document.querySelector('input#title').value,
-                    currImg = document.querySelector('input#img').value,
-                    currAuthor = document.querySelector('input#author').value,
-                    currPlot = document.querySelector('textarea#plot').value,
+                let currTitle = document.querySelector('input#title').value.trim(),
+                    currImg = document.querySelector('input#img').value.trim(),
+                    currAuthor = document.querySelector('input#author').value.trim(),
+                    currPlot = document.querySelector('textarea#plot').value.trim(),
                     id = Math.floor(Math.random() * 200) + 100,
                     timeoutMs = 3000;
                 if(currTitle.length&&currImg.length&&currAuthor.length&&currPlot.length){
@@ -276,10 +276,10 @@ class EditTab extends HTMLElement{
         this.firstChild.addEventListener('click', (e) => {
             const target = e.target;
             if (target.classList.contains('btn-save')) {
-                let currTitle = document.querySelector('input#title').value,
-                    currImg = document.querySelector('input#img').value,
-                    currAuthor = document.querySelector('input#author').value,
-                    currPlot = document.querySelector('textarea#plot').value,
+                let currTitle = document.querySelector('input#title').value.trim(),
+                    currImg = document.querySelector('input#img').value.trim(),
+                    currAuthor = document.querySelector('input#author').value.trim(),
+                    currPlot = document.querySelector('textarea#plot').value.trim(),
                     timeoutMs = 3000;
                 localStorageUtil.editBook({
                     id: id,
