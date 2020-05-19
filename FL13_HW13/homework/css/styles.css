@@ -1,0 +1,20 @@
+.navbar .nav-item{
+    font-weight: 600;
+}
+.card .card__subtitle{
+    font-weight: 500;
+}
+.hero .hero__subtitle{
+    font-weight: 400;
+}
+.game-section .game-section__subtitle{
+    max-width: 800px;
+}
+.btn-orange{
+    background: #FF804C;
+    color: #FFF;
+}
+.card .card__img{
+    box-shadow: 0 0 20px 5px rgba(0,0,0,0.2);
+    z-index: 100;
+}
