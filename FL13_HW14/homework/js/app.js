@@ -2,24 +2,19 @@ function Student(studName, studEmail){
     let homeworkResults = [],
         name = studName,
         email = studEmail;
-    this.getName = () => {
-        return name;
-    }
-    this.getEmail = () => {
-        return email;
-    }
+
+    this.getName = () => name;
+    this.getEmail = () => email;
+    this.getHomeworkResult = () => homeworkResults;
     this.addHomeworkResult = (topic, success) => {
         homeworkResults.push({
             topic: topic,
             success: success
         })
     }
-    this.getHomeworkResult = () => {
-        return homeworkResults;
-    }
 }
 
-function FrontendLab(students, failsLim){
+function FrontendLab(students = [], failsLim){
     let failedHomeworksLimit = failsLim,
         studentsList = students.map(stud => new Student(stud.name, stud.email));
     
@@ -40,9 +35,7 @@ function FrontendLab(students, failsLim){
     this.printStudentsEligibleForTest = () => {
         studentsList.forEach(stud => {
             let failCounter = 0;
-            stud.getHomeworkResult().forEach(res => {
-                res.success ? failCounter : failCounter++;
-            })
+            stud.getHomeworkResult().forEach(res => res.success ? failCounter : failCounter++);
             if(failCounter <= failedHomeworksLimit){
                 console.log('name: ' + stud.getName() + ', email: ' + stud.getEmail());
             }
