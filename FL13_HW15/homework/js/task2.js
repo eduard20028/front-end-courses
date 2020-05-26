@@ -1,6 +1,6 @@
 function Vehicle (color, engine) {
     this._driveInterval = null;
-    this._stopInrerval = null;
+    this._stopInterval = null;
     this._isStopped = true;
     this._maxSpeed = 70;
     this._speed = 0;
@@ -12,8 +12,13 @@ function Vehicle (color, engine) {
         return {
             engine: this._engine,
             color: this._color,
-            maxSpeed: this._maxSpeed
+            maxSpeed: this._maxSpeed,
+            model: this._model || 'unknown model'
         }
+    }
+
+    this.getModel = () => {
+        return this._model;
     }
 
     this.drive = () => {
@@ -26,7 +31,6 @@ function Vehicle (color, engine) {
             console.log(this._speed += this._speedUp);
             if (this._speed > this._maxSpeed) {
                 console.log('speed is too high, SLOW DOWN!')
-                clearInterval(this._driveInterval);
             }
         }, 2000);
     }
@@ -39,25 +43,25 @@ function Vehicle (color, engine) {
         clearInterval(this._driveInterval);
         const currSpeed = this._speed;
         this._isStopped = true;
-        this._stopInrerval = setInterval(() => {
+        this._stopInterval = setInterval(() => {
             console.log(this._speed -= this._speedUp);
-            if (!this._speed) {
-                clearInterval(this._stopInrerval);
+            if (this._speed === 0 || this._speed < 0) {
+                clearInterval(this._stopInterval);
                 this.printLastMaxSpeed(currSpeed);
             }
         }, 1500)
     }
 
     this.printLastMaxSpeed = (currSpeed) => {
-        console.log(`Vehicle is stopped. Maximum speed during the drive was: ${currSpeed}`);
+        console.log(`Vehicle is stopped. Maximum speed during the drive was: ${currSpeed}.`);
     }
 
     this.upgradeEngine = (newEngine, maxSpeed) => {
-        if(this._isStopped){
+        if(!this._isStopped){
+            console.log('You can upgrade engine only if vehicle is stopped');
+        } else {
             this._engine = newEngine;
             this._maxSpeed = maxSpeed;
-        } else {
-            console.log('You can upgrade engine only if vehicle is stopped');
         }
     }
 }
@@ -67,57 +71,46 @@ function Car (color, engine, model) {
     this._maxSpeed = 80;
     this._model = model;
 
-    this.getInfo = () => {
-        return {
-            engine: this._engine,
-            color: this._color,
-            maxSpeed: this._maxSpeed,
-            model: this._model
-        }
-    }
-
-    this.getModel = () => {
-        return this._model;
-    }
-
     this.printLastMaxSpeed = (currSpeed) => {
-        console.log(`Car ${this.getModel()} is stopped. Maximum speed during the drive ${currSpeed}`);
+        console.log(`Car ${this.getModel()} is stopped. Maximum speed during the drive ${currSpeed}.`);
     }
 
     this.changeColor = (newColor) => {
-        if(this._isStopped && this._color !== newColor){
+        if(!this._isStopped){
+            console.log('Please, stop the car to change color');
+        } else if (this._color === newColor) {
+            console.log('This color is already used. Please, choose another one.')
+        } else {
             this._color = newColor;
         }
     }
 }
 
 function Motorcycle (color, engine, model) {
-    Car.call(this, color, engine, model);
+    Vehicle.call(this, color, engine);
     this._maxSpeed = 90;
+    this._model = model;
 
     this.printLastMaxSpeed = () => {
-        console.log(`Motorcycle ${this.getModel()} is stopped. Good drive`);
+        console.log(`Motorcycle ${this.getModel()} is stopped. Good drive.`);
     }
 
     this.drive = () => {
+        if (!this._isStopped) {
+            console.log('Already drives');
+            return;
+        }
         console.log('Let’s drive');
+        this._isStopped = false;
         this._driveInterval = setInterval(() => {
             console.log(this._speed += this._speedUp);
             if (this._speed > this._maxSpeed) {
-                console.log('speed is too high, SLOW DOWN!');
+                console.log('Speed is too high, SLOW DOWN!');
             }
             if (this._speed - this._maxSpeed >= 30) {
-                console.log('Engine overheating');
-                this._isStopped = true;
+                console.log('Engine overheating!');
                 this.stop();
             }
         }, 2000);
     }
 }
-
-let moto = new Motorcycle('green', 'V8', 1);
-let car = new Car('green', 'V8', 1);
-
-console.log(moto);
-
-moto.drive();
