@@ -1,4 +1,4 @@
-# Courses
+# Front-END courses
 It is repo, where you can see all my projects from courses of Front-END developing
 ## Important
 Also, **some tasks required a single-file implementation**. Of course, I'd rather break the code into files.
