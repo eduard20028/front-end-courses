@@ -9,5 +9,6 @@ It is repo, where you can see all my projects from courses of Front-END developi
 <p>It is an application, which shows list of books. There are you can delete book, edit book or add new book. There is also an implementation of routing. You can see and test it by yourself.</p>
 <h3><a href="https://eduard20028.github.io/courses.github.io/FL13_HW13/homework/">FL13_HW13</a></h3>
 <p>Flexible project written using bootstrap library. The BEM methodology is also used.</p>
-## Other projects
 
+## Other projects
+<p>In other projects, you can see simple sites or JS code that is written for local tasks. It looks like console applications. I do not think it will be really interesting.</p>
