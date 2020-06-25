@@ -1,5 +1,7 @@
 # Courses
 It is repo, where you can see all my projects from courses of Front-END developing
+## Important
+Also, **some tasks required a single-file implementation**. Of course, I'd rather break the code into files.
 ## Most significant projects
 <h3><a href="https://eduard20028.github.io/courses.github.io/FL13_HW4/homework">FL13_HW4</a></h3>
 <p>Simple flexible project.</p>
